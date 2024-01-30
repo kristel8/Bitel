@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>Mi Plan Bitel</title>
+    <link rel="stylesheet" href="app/css/style.css?version=1.0" />
+  </head>
+
+  <body>
+    <app-header></app-header>
+    <div id="btnComprar">Compra aquí</div>
+    <h1 class="plan__title">Tenemos 7 planes chip</h1>
+    <h4 class="plan__subtitle">¡No necesitas evaluación, todos aprueban!</h4>
+
+    <section class="container">
+      <div class="carousel-container">
+        <app-card class="carousel"></app-card>
+        <button class="prev-btn btn-carrousel">
+          <img src="app/assets/icons/previous.svg" />
+        </button>
+        <button class="next-btn btn-carrousel">
+          <img src="app/assets/icons/next.svg" />
+        </button>
+      </div>
+    </section>
+
+    <footer>
+      <app-footer></app-footer>
+      <span>© Desarrollado por KRIVI</span>
+    </footer>
+
+    <script type="module" src="app/js/index.js?version=1.0"></script>
+    <script src="app/components/header.js?version=1.0"></script>
+    <script src="app/components/footer.js?version=1.0"></script>
+    <script type="module" src="app/components/card.js"></script>
+  </body>
+</html>

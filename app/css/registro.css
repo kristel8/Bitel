@@ -1,0 +1,230 @@
+.registro {
+  display: grid;
+  margin: 2em 5em;
+  row-gap: 3em;
+}
+form {
+  display: grid;
+  row-gap: 3em;
+}
+
+.container__send {
+  display: flex;
+  column-gap: 20px;
+}
+
+.container-plan {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 100%;
+}
+
+.container-plan .detail {
+  display: grid;
+  max-width: 500px;
+  padding: 0 80px 20px 20px;
+}
+
+.container-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.container-plan a, .container-detail a {
+  font-weight: 600;
+  justify-self: end;
+}
+
+.container-detail .detail {
+  display: grid;
+  max-width: 500px;
+  padding: 0 40px 20px 20px;
+  row-gap: 20px;
+}
+
+.container-detail .detail .list-item {
+  display: flex;
+  width: 100%;
+}
+
+.container-detail .detail .list-item .item {
+  row-gap: 20px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.container-detail .detail .list-item .item span:nth-child(1) {
+  color: var(--primary-light-color);
+  font-size: 1.2em;
+}
+
+.card-form {
+  width: 100%;
+  border: 1px solid var(--primary-light-color);
+  border-radius: 5px;
+  background-color: var(--white-color);
+  padding: 0 20px 20px 20px;
+}
+
+.card-form h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+.card-form h3 {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.card-form p {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.card-form > small {
+  color: #999999;
+  font-size: 10px;
+}
+
+.card-form > small > span {
+  color: #ff0000;
+}
+
+.list-item {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.list-item .item {
+  display: grid;
+}
+
+.container__form {
+  display: grid;
+}
+
+.container__form .form__operador,
+.container__form .form__titular {
+  display: flex;
+  column-gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  row-gap: 20px;
+}
+
+.group-field {
+  row-gap: 10px;
+  column-gap: 20px;
+}
+
+.group-field > label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8b8d8e;
+  width: 100%;
+}
+
+.group-field .field {
+  row-gap: 10px;
+  width: 100%;
+  height: min-content;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #8b8d8e;
+  width: 100%;
+}
+
+.field small {
+  color: #ff0000;
+  font-weight: 500;
+  font-size: 11px;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+}
+
+.col {
+  display: grid;
+  width: 100%;
+  height: min-content;
+}
+
+.container__delivery {
+  row-gap: 20px;
+  column-gap: 50px;
+}
+
+.container__delivery .form__ubigeo {
+  row-gap: 20px;
+}
+
+.container__delivery .form__delivery {
+  display: flex;
+  width: 100%;
+  color: #727373;
+  font-size: 12px;
+}
+
+.container__delivery .form__delivery .group-field {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  width: 100%;
+}
+
+.form__delivery .group-field small {
+  color: #ff0000;
+  font-weight: 500;
+}
+
+.container__information {
+  font-size: 13px;
+  color: #999999;
+  max-width: 600px;
+}
+
+.container__information small {
+  display: block;
+  padding-left: 20px;
+}
+
+@media (max-width: 800px) {
+  .registro {
+    margin: 2em 0;
+  }
+
+  .container__delivery {
+    flex-wrap: wrap;
+  }
+
+  .container__delivery .form__delivery {
+    display: grid;
+    width: 100%;
+    row-gap: 20px;
+  }
+
+  .container-detail {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container__form .form__titular {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+}

@@ -1,0 +1,291 @@
+[
+    {
+        "idCard": "1",
+        "titulo": "Plan de S/ 29.90",
+        "descripcionTitulo": "TODO ILIMITADO",
+        "descripcionDetalleTitulo": "INTERNET, LLAMADAS Y SMS",
+        "megas": "12 GB",
+        "descripcionMegas": "Por 6 meses",
+        "redesSociales": [
+            {
+                "titulo": "Fotos en redes sociales",
+                "redes": [
+                    {
+                        "imagen": "instagram.png"
+                    },
+                    {
+                        "imagen": "facebook.png"
+                    }
+                ]
+            }
+        ],
+        "promociones": [
+            {
+                "nombrePromo": "Promo TikTok",
+                "cantidadMegas": "30 GB",
+                "imagenPromo": "tiktok.png",
+                "duracion": ""
+            }
+        ],
+        "detalles": [
+            {
+                "titulo": "Internet Ilimitado",
+                "descripcion": "<br>Una vez agotados los GB de data, el cliente podrá acceder ilimitadamente a internet con velocidad de 0.256 Mbps para descarga y 0.128 Mbps de subida. Llamadas y SMS ilimitados a todo destino nacional."
+            },
+            {
+                "titulo": "<br>Promoción 30 GB para TikTok en Portabilidad",
+                "descripcion": "<br>Los clientes que porten su línea móvil Bitel y activen su plan desde el 10/09/2022 recibirán un beneficio de 30 GB para TikTok durante 6 meses. <br>El beneficio será entregado desde el primer hasta sexto ciclo de facturación."
+            },
+            {
+                "titulo": "<br>APPs gratis",
+                "descripcion": "<br>-Facebook (fotos) <br>-Instagram (fotos)"
+            }
+        ]
+    },
+    {
+        "idCard": "2",
+        "titulo": "Plan de S/ 49.90",
+        "descripcionTitulo": "TODO ILIMITADO",
+        "descripcionDetalleTitulo": "INTERNET, LLAMADAS Y SMS",
+        "megas": "35 GB",
+        "descripcionMegas": "Gigas regulares en alta velocidad",
+        "redesSociales": [
+            {
+                "titulo": "Ilimitado en alta velocidad",
+                "redes": [
+                    {
+                        "imagen": "whatsapp.png"
+                    },
+                    {
+                        "imagen": "line.png"
+                    }
+                ]
+            },
+            {
+                "titulo": "Fotos en redes sociales",
+                "redes": [
+                    {
+                        "imagen": "instagram.png"
+                    },
+                    {
+                        "imagen": "facebook.png"
+                    }
+                ]
+            }
+        ],
+        "promociones": [
+            {
+                "nombrePromo": "Promo TikTok",
+                "cantidadMegas": "30 GB",
+                "imagenPromo": "",
+                "duracion": "Por 6 meses"
+            }
+        ],
+        "detalles": [
+            {
+                "titulo": "Internet Ilimitado",
+                "descripcion": "<br>Una vez agotados los GB de data, el cliente podrá acceder ilimitadamente a internet con velocidad de 0.256 Mbps para descarga y 0.128 Mbps de subida. Llamadas y SMS ilimitados a todo destino nacional."
+            },
+            {
+                "titulo": "<br>Promoción 30 GB para TikTok en Portabilidad",
+                "descripcion": "<br>Los clientes que porten su línea móvil Bitel y activen su plan desde el 10/09/2022 recibirán un beneficio de 30 GB para TikTok durante 6 meses. <br>El beneficio será entregado desde el primer hasta sexto ciclo de facturación."
+            },
+            {
+                "titulo": "<br>APPs gratis",
+                "descripcion": "<br>-Facebook e Instagram (fotos). <br>-Whatsapp Ilimitado en alta velocidad. <br>-Internet limitado para otras aplicaciones. incluye: Clash royale, Clash of Clans, Garena Freefire, Waze."
+            }
+        ]
+    },
+    {
+        "idCard": "3",
+        "titulo": "Plan de S/ 55.90",
+        "descripcionTitulo": "TODO ILIMITADO",
+        "descripcionDetalleTitulo": "INTERNET, LLAMADAS Y SMS",
+        "megas": "60 GB",
+        "descripcionMegas": "Gigas regulares en alta velocidad",
+        "redesSociales": [
+            {
+                "titulo": "Ilimitado en alta velocidad",
+                "redes": [
+                    {
+                        "imagen": "whatsapp.png"
+                    },
+                    {
+                        "imagen": "line.png"
+                    }
+                ]
+            },
+            {
+                "titulo": "Fotos en redes sociales",
+                "redes": [
+                    {
+                        "imagen": "instagram.png"
+                    },
+                    {
+                        "imagen": "facebook.png"
+                    }
+                ]
+            }
+        ],
+        "promociones": [
+            {
+                "nombrePromo": "Promo TikTok",
+                "cantidadMegas": "30 GB",
+                "imagenPromo": "tiktok.png",
+                "duracion": ""
+            }
+        ],
+        "detalles": [
+            {
+                "titulo": "Internet Ilimitado",
+                "descripcion": "<br>Una vez agotados los GB de data, el cliente podrá acceder ilimitadamente a internet con velocidad de 0.256 Mbps para descarga y 0.128 Mbps de subida. Llamadas y SMS ilimitados a todo destino nacional."
+            },
+            {
+                "titulo": "<br>Promoción 30 GB para TikTok en Portabilidad",
+                "descripcion": "<br>Los clientes que porten su línea móvil Bitel y activen su plan desde el 10/09/2022 recibirán un beneficio de 30 GB para TikTok durante 6 meses. <br>El beneficio será entregado desde el primer hasta sexto ciclo de facturación."
+            },
+            {
+                "titulo": "<br>APPs gratis",
+                "descripcion": "<br>-Facebook e Instagram (fotos). <br>-Whatsapp Ilimitado en alta velocidad. <br>-Internet limitado para otras aplicaciones. incluye: Clash royale, Clash of Clans, Garena Freefire, Waze."
+            }
+        ]
+    },
+    {
+        "idCard": "4",
+        "titulo": "Plan de S/ 65.90",
+        "descripcionTitulo": "TODO ILIMITADO",
+        "descripcionDetalleTitulo": "INTERNET, LLAMADAS Y SMS",
+        "megas": "100 GB",
+        "descripcionMegas": "Gigas regulares en alta velocidad",
+        "redesSociales": [
+            {
+                "titulo": "Fotos en redes sociales",
+                "redes": [
+                    {
+                        "imagen": "instagram.png"
+                    },
+                    {
+                        "imagen": "facebook.png"
+                    }
+                ]
+            }
+        ],
+        "promociones": [
+            {
+                "nombrePromo": "Promo TikTok",
+                "cantidadMegas": "30 GB",
+                "imagenPromo": "",
+                "duracion": "Por 6 meses"
+            }
+        ],
+        "detalles": [
+            {
+                "titulo": "Internet Ilimitado",
+                "descripcion": "<br>Una vez agotados los GB de data, el cliente podrá acceder ilimitadamente a internet con velocidad de 0.256 Mbps para descarga y 0.128 Mbps de subida. Llamadas y SMS ilimitados a todo destino nacional."
+            },
+            {
+                "titulo": "<br>Promoción 30 GB para TikTok en Portabilidad",
+                "descripcion": "<br>Los clientes que porten su línea móvil Bitel y activen su plan desde el 10/09/2022 recibirán un beneficio de 30 GB para TikTok durante 6 meses. <br>El beneficio será entregado desde el primer hasta sexto ciclo de facturación."
+            },
+            {
+                "titulo": "<br>APPs gratis",
+                "descripcion": "<br>-Facebook e Instagram (fotos)."
+            }
+        ]
+    },
+    {
+        "idCard": "5",
+        "titulo": "Plan de S/ 69.90",
+        "descripcionTitulo": "TODO ILIMITADO",
+        "descripcionDetalleTitulo": "INTERNET, LLAMADAS Y SMS",
+        "megas": "110 GB",
+        "descripcionMegas": "Gigas regulares en alta velocidad",
+        "redesSociales": [],
+        "promociones": [],
+        "detalles": [
+            {
+                "titulo": "Internet Ilimitado",
+                "descripcion": "<br>Una vez agotados los GB de data, el cliente podrá acceder ilimitadamente a internet con velocidad de 0.256 Mbps para descarga y 0.128 Mbps de subida."
+            }
+        ]
+    },
+    {
+        "idCard": "6",
+        "titulo": "Plan de S/ 79.90",
+        "descripcionTitulo": "TODO ILIMITADO",
+        "descripcionDetalleTitulo": "INTERNET, LLAMADAS Y SMS",
+        "megas": "125 GB",
+        "descripcionMegas": "Gigas regulares en alta velocidad",
+        "redesSociales": [
+            {
+                "titulo": "Fotos en redes sociales",
+                "redes": [
+                    {
+                        "imagen": "instagram.png"
+                    },
+                    {
+                        "imagen": "facebook.png"
+                    }
+                ]
+            }
+        ],
+        "promociones": [],
+        "detalles": [
+            {
+                "titulo": "Internet Ilimitado",
+                "descripcion": "<br>Una vez agotados los GB de data, el cliente podrá acceder ilimitadamente a internet con velocidad de 0.256 Mbps para descarga y 0.128 Mbps de subida. Llamadas y SMS ilimitados a todo destino nacional."
+            },
+            {
+                "titulo": "<br>Promoción 30 GB para TikTok en Portabilidad",
+                "descripcion": "<br>Los clientes que porten su línea móvil Bitel y activen su plan desde el 10/09/2022 recibirán un beneficio de 30 GB para TikTok durante 6 meses. <br>El beneficio será entregado desde el primer hasta sexto ciclo de facturación."
+            },
+            {
+                "titulo": "<br>APPs gratis",
+                "descripcion": "<br>-Facebook e Instagram (fotos)."
+            }
+        ]
+    },
+    {
+        "idCard": "7",
+        "titulo": "Plan de S/ 105.90",
+        "descripcionTitulo": "TODO ILIMITADO",
+        "descripcionDetalleTitulo": "INTERNET, LLAMADAS Y SMS",
+        "megas": "55 GB",
+        "descripcionMegas": "Gigas regulares en alta velocidad",
+        "redesSociales": [
+            {
+                "titulo": "Fotos en redes sociales",
+                "redes": [
+                    {
+                        "imagen": "instagram.png"
+                    },
+                    {
+                        "imagen": "facebook.png"
+                    }
+                ]
+            }
+        ],
+        "promociones": [
+            {
+                "nombrePromo": "Promo TikTok",
+                "cantidadMegas": "30GB",
+                "imagenPromo": "",
+                "duracion": "Por 6 meses"
+            }
+        ],
+        "detalles": [
+            {
+                "titulo": "Internet Ilimitado",
+                "descripcion": "<br>Una vez agotados los GB de data, el cliente podrá acceder ilimitadamente a internet con velocidad de 0.256 Mbps para descarga y 0.128 Mbps de subida. Llamadas y SMS ilimitados a todo destino nacional."
+            },
+            {
+                "titulo": "<br>Promoción 30 GB para TikTok en Portabilidad",
+                "descripcion": "<br>Los clientes que porten su línea móvil Bitel y activen su plan desde el 10/09/2022 recibirán un beneficio de 30 GB para TikTok durante 6 meses. <br>El beneficio será entregado desde el primer hasta sexto ciclo de facturación."
+            },
+            {
+                "titulo": "<br>APPs gratis",
+                "descripcion": "<br>-Facebook e Instagram (fotos)."
+            }
+        ]
+    }
+]

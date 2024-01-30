@@ -1,0 +1,13 @@
+:root {
+    --color-title-text: #F1E72E;
+    --primary-color: #045e6e;
+    --primary-light-color: #15888F;
+    --primary-lighter-color: #029BB2;
+    --white-color: #ffffff;
+    --second-color: #008C32;
+    --second-light-color: #00a63a;
+    --background-color: #FFED00;
+    --font-weight: 700;
+    --font-title-size: 2.5em;
+    --border-color: #BABABA;
+}

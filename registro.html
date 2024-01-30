@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Plan Bitel</title>
+    <link rel="stylesheet" href="app/css/style.css" />
+</head>
+
+<body>
+    <app-header></app-header>
+
+    <h1 class="plan__title">Tenemos 7 planes chip</h1>
+    <h4 class="plan__subtitle">¡No necesitas evaluación, todos aprueban!</h4>
+    <form id="form_registro">
+        <section class="registro">
+            <section id="containerPlan" class="container-plan">
+                <section class="detail card-form">
+                    <h3>Selecciona tu plan</h3>
+                    <select id="plan" style="max-width: 200px;">
+                    </select>
+                </section>
+
+                <a href="/">Menú principal</a>
+            </section>
+
+            <section class="container-detail">
+                <section class="detail card-form">
+                    <h2>Detalle de mi pedido</h2>
+                    <div id="detailOrder" class="list-item">
+                        <div class="item col">
+                            <span>Producto</span>
+                            <input type="text" id="producto" name="producto" placeholder="-" class="form-control"
+                                readonly />
+                        </div>
+                        <div class="item col">
+                            <span>Modalidad</span>
+                            <input type="text" id="modalidad" name="modalidad" placeholder="-" class="form-control"
+                                readonly />
+                        </div>
+                        <div class="item col">
+                            <span>Cantidad</span>
+                            <input type="text" id="cantidad" name="cantidad" placeholder="-" class="form-control"
+                                readonly />
+                        </div>
+                        <div class="item col">
+                            <span>Total</span>
+                            <input type="text" id="total" name="total" placeholder="-" class="form-control" readonly />
+                        </div>
+                    </div>
+                </section>
+
+                <a id="btnCancel" href="/">Cambiar plan</a>
+            </section>
+
+            <section class="container__form card-form">
+                <h2>Datos del titular</h2>
+                <br>
+                <section class="form__titular">
+                    <section class="group-field col">
+                        <div class="field col">
+                            <label for="nombres">Nombres <small>(*)</small></label>
+                            <input type="text" id="name" name="nombres" placeholder="Nombres completos"
+                                style="max-width: 350px;" autocomplete="off" required />
+                        </div>
+                        <div class="field col">
+                            <label for="Apellidos">Apellidos <small>(*)</small></label>
+                            <input type="text" id="lastName" name="apellidos" placeholder="Apellidos completos"
+                                style="max-width: 350px;" autocomplete="off" required />
+                        </div>
+                        <div class="field col">
+                            <label for="TipoDocumento">Tipo de documento <small>(*)</small></label>
+                            <select id="documentType" name="tipodocumento" style="max-width: 150px;">
+                                <option value="DNI" selected>DNI</option>
+                            </select>
+                        </div>
+
+                    </section>
+
+                    <section class="form__operador row">
+                        <section class="group-field col">
+                            <div class="field col">
+                                <label for="NumeroDocumento">Número de documento <small>(*)</small></label>
+                                <input type="text" id="documentNumber" name="numerodocumento" placeholder="Número"
+                                    style="max-width: 150px;" autocomplete="off" pattern="[0-9]{8}"
+                                    onKeyPress="if(this.value.length==8) return false" required />
+                            </div>
+                            <div class="field col">
+                                <label for="Celular">Celular de contacto <small>(*)</small></label>
+                                <input type="text" id="numberPhone" name="celularcontacto" placeholder="Celular"
+                                    style="max-width: 150px;" autocomplete="off" pattern="[0-9]{9}"
+                                    onKeyPress="if(this.value.length==9) return false" required />
+                            </div>
+                            <div class="field col">
+                                <label for="NumeroMigrar">Número para migrar a Bitel <small>(*)</small></label>
+                                <input type="text" id="numberMigrate" name="numeroparamigrar"
+                                    placeholder="Número para migrar" style="max-width: 150px;" maxlength="9"
+                                    minlength="9" autocomplete="off" pattern="[0-9]{9}"
+                                    onKeyPress="if(this.value.length==9) return false" required />
+                            </div>
+                        </section>
+                        <section class="group-field col">
+                            <div class="field col">
+                                <label for="Operador">Operador de procedencia <small>(*)</small></label>
+                                <select id="operator" name="operadorprocedencia" style="max-width: 150px;" required>
+                                    <option hidden selected>Seleccione</option>
+                                    <option value="Movistar">Movistar</option>
+                                    <option value="Claro">Claro</option>
+                                    <option value="Entel">Entel</option>
+                                </select>
+                            </div>
+                            <div class="field col">
+                                <label for="Modalidad">Modalidad actual <small>(*)</small></label>
+                                <select id="modality" name="modalidadactual" style="max-width: 150px;" required>
+                                    <option hidden selected>Seleccione</option>
+                                    <option value="Prepago">Prepago</option>
+                                    <option value="Postpago">Postpago</option>
+                                </select>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+
+
+                <br>
+                <small><span>(*)</span> Campo obligatorio. Asegúrese que la información ingresada sea la
+                    correcta.</small>
+            </section>
+
+            <section class="container__form card-form">
+                <h2>Datos para la entrega</h2>
+
+                <p>Usaremos la dirección para enviarte el chip</p>
+
+                <div class="container__delivery row">
+                    <section class="form__ubigeo col">
+                        <section class="group-field row">
+                            <div class="field col">
+                                <label for="Departamento">Departamento <small>(*)</small></label>
+                                <select id="department" name="departamento" required>
+                                    <option hidden selected>Seleccione</option>
+                                </select>
+                            </div>
+                            <div class="field col">
+                                <label for="Provincia">Provincia <small>(*)</small></label>
+                                <select id="province" name="provincia" required>
+                                    <option hidden selected>Seleccione</option>
+                                </select>
+                            </div>
+                            <div class="field col">
+                                <label for="Distrito">Distrito <small>(*)</small></label>
+                                <select id="district" name="distrito" required>
+                                    <option hidden selected>Seleccione</option>
+                                </select>
+                            </div>
+                        </section>
+
+                        <section class="group-field row">
+                            <div class="field col">
+                                <label for="Direccion">Dirección <small>(*)</small></label>
+                                <input type="text" id="address" name="direccion" placeholder="Calle/Avenida/Jirón"
+                                    autocomplete="off" required />
+                            </div>
+                            <div class="field col">
+                                <label for="Numero">Número <small>(*)</small></label>
+                                <input type="number" id="addressNumber" name="numero" placeholder="Número de domicilio"
+                                    autocomplete="off" required />
+                            </div>
+                        </section>
+
+                        <section class="group-field">
+                            <div class="field col">
+                                <label for="Numero">Referencia <small>(*)</small></label>
+                                <input type="text" id="reference" name="referencia"
+                                    placeholder="Indícanos una referencia para poder llegar" autocomplete="off"
+                                    required />
+                            </div>
+                        </section>
+                    </section>
+
+                    <section class="form__delivery">
+                        <section class="group-field">
+                            <label for="Entrega">Horario de entrega <small>(*)</small></label>
+                            <div>
+                                <input type="radio" name="horarioentrega" value="Mañana (08:00 a 12:00)" checked>
+                                <label for="mañana">Mañana (08:00 a 12:00)</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="horarioentrega" value="Tarde (12:00 a 18:00)">
+                                <label for="tarde">Tarde (12:00 a 18:00)</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" name="horarioentrega" value="Disponibilidad todo el día">
+                                <label for="todo">Disponibilidad todo el día</label>
+                            </div>
+                        </section>
+
+
+                        <section class="group-field">
+                            <label for="Pago">Método de pago <small>(*)</small></label>
+                            <div>
+                                <input type="radio" name="metodopago" value="Contra entrega" checked>
+                                <label for="Pago">Contra entrega</label>
+                            </div>
+                        </section>
+                    </section>
+                </div>
+
+                <br>
+                <small><span>(*)</span> Campo obligatorio. Asegúrese que la información ingresada sea la
+                    correcta.</small>
+            </section>
+
+            <section class="container__information">
+                <label class="checkbox">
+                    <label for="Politica">Acepto las políticas de Tratamiento de datos</label>
+                    <input type="checkbox" id="checkPolitic" name="politica">
+                     <span class="checkmark"></span>
+                </label>
+    
+                <small>*Al hacer click en "enviar" acepta las condiciones comerciales de Bitel, la renta
+                    adelantada y su prorrateo correspondiente.
+                    Un representante de ventas se comunicará contigo para brindarte todos los detalles sobre el Plan y
+                    el Pago de tu pedido.</small>
+                <br>
+            </section>
+
+            <section class="container__send">
+                <button id="btnSend" type="submit" class="button">Enviar</button>
+                <div id="loader" class="loader" hidden></div>
+            </section>
+
+        </section>
+    </form>
+
+    <footer>
+        <app-footer></app-footer>
+    </footer>
+
+    <script type="module" src="app/js/index.js?version=1.0"></script>
+    <script src="app/components/header.js?version=1.0"></script>
+    <script src="app/components/footer.js?version=1.0"></script>
+    <script type="module" src="app/js/registro.js?version=1.0"></script>
+</body>
+
+</html>
