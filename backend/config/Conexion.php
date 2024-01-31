@@ -8,7 +8,7 @@ mysqli_query($Conexion, 'SET NAMES "'.DB_ENCODE.'"');
 
 if(mysqli_connect_errno()){
 
-    printf("Fallo conexion a la base de datos :\n",mysqli_connect_errr());
+    printf("Fallo conexion a la base de datos :\n",mysqli_connect_error());
     exit();
 } 
 
