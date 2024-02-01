@@ -6,6 +6,7 @@
 * {
   box-sizing: border-box;
   padding: 0px;
+  margin: 0px;
 }
 
 body {
@@ -333,4 +334,113 @@ select:focus {
   top: 80%;
   z-index: 99;
   cursor: pointer;
+}
+
+.whatsapp__btnOpen {
+  position: fixed;  
+  top: 50%;
+  left: 225px;
+  z-index: 99;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background: #03C100;
+  border: none;
+  border-radius: 50%;  
+  outline: none;
+}
+
+.whatsapp__btnOpen img {
+  width: 30px;
+}
+
+.whatsapp-modal {
+  position: fixed;  
+  bottom: 3%;
+  width: 350px;
+  z-index: 100;
+  display: grid;
+  background: #ffffff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 3px 3px 2px 0 rgba(0, 0, 0, 0.3);
+
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(-15px);
+
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.whatsapp-modal--show {
+  pointer-events: unset;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.whatsapp-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #03C100;
+  padding: 15px 18px;
+}
+
+.whatsapp-modal__header p {
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.whatsapp-modal__btnClose {
+  cursor: pointer;
+  border: none;
+  width: 25px;
+  height: 25px;
+  font-size: 0.8rem;
+  background: gray;
+  border-radius: 50%;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+}
+
+.whatsapp__wrap {
+  background: #f7fcf6;
+  padding: 25px 18px 15px 18px;
+  display: grid;
+  gap: 25px;
+}
+
+.whatsapp__wrap p {
+  justify-self: left;
+  color: #6E5A5A;
+  font-size: 0.8rem;  
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 0 10px 10px 10px;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.whatsapp__wrap a {
+  justify-self: right;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #ffffff;
+  background: #03C100;
+  padding: 10px 30px;
+  border-radius: 15px;
+  text-decoration: none;
+}
+
+@media (max-width: 800px) {
+  .whatsapp__btnOpen {
+    left: 10px;
+  }
+  
+  .whatsapp-modal {
+    width: 100px;
+    left: 10px;
+  }
 }

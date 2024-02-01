@@ -12,6 +12,24 @@
 
   <body>
     <app-header></app-header>
+
+    <!-- WhatsApp Modal Button Open -->
+    <button class="whatsapp__btnOpen">
+      <img src="app/assets/icons/whatsapp.svg" alt="WhatsApp Icon">
+    </button>
+
+    <!-- WhatsApp Modal -->
+    <div class="whatsapp-modal">
+      <header class="whatsapp-modal__header">
+        <p>WhatsApp Bitel</p>
+        <button class="whatsapp-modal__btnClose">X</button>
+      </header>
+      <div class="whatsapp__wrap">
+        <p>Hola, ¿Necesita ayuda para elegir un plan?</p>
+        <a href="https://wa.me/51987654321?text=Hola, Quisiera algo de información." target="_blank">Iniciar chat >|</a>        
+      </div>
+    </div>    
+
     <div id="btnComprar">Compra aquí</div>
     <a class="btnLlamar" href="tel:+51987654321">Llámanos</a>
     <h1 class="plan__title">Tenemos 7 planes chip</h1>
