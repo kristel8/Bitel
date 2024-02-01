@@ -4,11 +4,35 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KXR784PJ');</script>
+<!-- End Google Tag Manager -->
+
     <title>Mi Plan Bitel</title>
+
+    <!-- Precarga del archivo de estilo CSS -->
+    <link rel="preload" href="app/css/style.css" as="style"/>
+
+    <!-- Precarga de tus scripts de JavaScript -->
+    <link rel="preload" href="app/js/index.js?version=1.0" as="script" />
+    <link rel="preload" href="app/components/header.js?version=1.0" as="script" />
+    <link rel="preload" href="app/components/footer.js?version=1.0" as="script" />
+    <link rel="preload" href="app/js/registro.js?version=1.0" as="script" />
+
     <link rel="stylesheet" href="app/css/style.css" />
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXR784PJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <app-header></app-header>
 
     <h1 class="plan__title">Tenemos 7 planes chip</h1>
@@ -218,7 +242,7 @@
                 <label class="checkbox">
                     <label for="Politica">Acepto las políticas de Tratamiento de datos</label>
                     <input type="checkbox" id="checkPolitic" name="politica">
-                     <span class="checkmark"></span>
+                    <span class="checkmark"></span>
                 </label>
     
                 <small>*Al hacer click en "enviar" acepta las condiciones comerciales de Bitel, la renta
