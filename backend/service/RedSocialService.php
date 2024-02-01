@@ -1,68 +1,58 @@
 <?php
 
-
 require_once "../modelo/RedSocialModel.php";
 
+class RedSocialService {
 
-Class RedSocialService{
-
-    public function __construct(){
-
+    public function __construct() {
     }
 
-    public function getRedesSociales ($idCard){
+    public function getRedesSociales($idCard) {
+        try {
+            $redSocialModel = new RedSocialModel();
+            $rpt = $redSocialModel->listarCabeceras($idCard);
 
-        $redSocialModel = new RedSocialModel();
-        
-        $rpt=$redSocialModel->listarCabeceras($idCard);
-        
-        $redSocial = Array();
+            $redSocial = [];
 
-        while($reg=$rpt->fetch_object()){
+            while ($reg = $rpt->fetch_object()) {
+                $redSocial[] = [
+                    "titulo" => $reg->titulo,
+                    "redes" => $this->getImagenesRedes($idCard, $reg->titulo)
+                ];
+            }
 
-          
-            $redSocial[]=array(
-    
-                "titulo"=>$reg->titulo,
-                "redes"=> $this->getImagenesRedes($idCard, $reg->titulo)
-                
-                
-            
-            );
+            // Cerrar el recurso (en este caso, el resultado de la consulta)
+            $rpt->close();
+
+            return $redSocial;
+        } catch (Exception $e) {
+            // Manejar cualquier excepción y devolver un mensaje de error
+            return ["error" => $e->getMessage()];
         }
-
-        return $redSocial;
-
     }
 
+    public function getImagenesRedes($idCard, $titulo) {
+        try {
+            $redSocialModel = new RedSocialModel();
+            $rpt = $redSocialModel->listarImagenes($idCard, $titulo);
 
+            $imagen = [];
 
-    public function getImagenesRedes ($idCard, $titulo){
+            while ($reg = $rpt->fetch_object()) {
+                $imagen[] = [
+                    "imagen" => $reg->imagen
+                ];
+            }
 
-        $redSocialModel = new RedSocialModel();
-        
-        $rpt=$redSocialModel->listarImagenes($idCard, $titulo);
-        
-        $imagen = Array();
+            // Cerrar el recurso (en este caso, el resultado de la consulta)
+            $rpt->close();
 
-        while($reg=$rpt->fetch_object()){
-
-            $imagen[]=array(
-    
-                "imagen"=>$reg->imagen
-                
-            
-            );
+            return $imagen;
+        } catch (Exception $e) {
+            // Manejar cualquier excepción y devolver un mensaje de error
+            return ["error" => $e->getMessage()];
         }
-
-        return $imagen;
-
     }
-
-
-
 }
-
-
 
 ?>

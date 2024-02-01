@@ -1,32 +1,45 @@
-<?php 
+<?php
 
-require_once "Global.php"; 
+require_once "Global.php";
 
-$Conexion = new mysqli(DB_HOST,DB_USERNAME, DB_PASSWORD,DB_NAME);
+class Conexion {
+    private $conexion;
 
-mysqli_query($Conexion, 'SET NAMES "'.DB_ENCODE.'"');
+    public function __construct() {
+        $this->conexion = new mysqli(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
-if(mysqli_connect_errno()){
+        mysqli_query($this->conexion, 'SET NAMES "'.DB_ENCODE.'"');
 
-    printf("Fallo conexion a la base de datos :\n",mysqli_connect_errr());
-    exit();
-} 
+        if ($this->conexion->connect_errno) {
+            throw new Exception("Fallo conexión a la base de datos: " . $this->conexion->connect_error);
+        }
+    }
 
-if(!function_exists('EjecutarConsulta')){
-function EjecutarConsulta($Sql){
+    public function ejecutarConsulta($sql) {
+        $query = $this->conexion->query($sql);
 
-    global $Conexion;
-    $Query = $Conexion->query($Sql);
-    return $Query;
+        if (!$query) {
+            throw new Exception("Error en la consulta: " . $this->conexion->error);
+        }
+
+        return $query;
+    }
+
+    public function limpiarCadena($str) {
+        // Ejemplo básico para eliminar espacios en blanco al inicio y al final
+        $str = trim($str);
+        return $str;
+    }
+
+    public function cerrarConexion() {
+        $this->conexion->close();
+    }
 }
 
-function limpiarCadena($Str){
-
-    global $Conexion;
-    $Str = rtrim(strtoupper($Str));
-    return $Str;
-}
-
-}
+// Uso de la clase
+$miConexion = new Conexion();
+// Ejemplo de consulta
+$resultado = $miConexion->ejecutarConsulta("SELECT * FROM miTabla");
+$miConexion->cerrarConexion();
 
 ?>

@@ -2,22 +2,22 @@
 
 require "../Config/Conexion.php";
 
-    Class CardModel{
+class CardModel {
+    public function __construct() {
+    }
 
-        public function __construct(){
+    public function listar() {
+        $sql = "SELECT idcard, titulo, descripciontitulo, descripciondetalletitulo, megas, descripcionmegas FROM card;";
+        $result = EjecutarConsulta($sql);
 
+        if (!$result) {
+            // Manejar el error, por ejemplo, lanzar una excepción o registrar el error.
+            throw new Exception("Error al ejecutar la consulta: " . $sql);
         }
 
-        public function Listar (){
-
-            $Sql="select c.idcard, c.titulo, c.descripciontitulo, c.descripciondetalletitulo, c.megas, c.descripcionmegas from card c;";
-            
-            return EjecutarConsulta($Sql);
-
-        }
-
-
-
+        return $result;
+    }
 }
 
 ?>
+
