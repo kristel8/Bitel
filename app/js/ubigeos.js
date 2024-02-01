@@ -1,44 +1,83 @@
-import { getDepartamentos, getDistritos, getProvincias } from "./services.js"
+import { getDepartamentos, getDistritos, getProvincias } from "./services.js";
 
 export class Ubigeos {
     constructor() {
-        this.departamentos = this.getListDepartamentos() || [];
-        this.provincias = this.getListProvincias() || [];
-        this.distritos = this.getListDistritos() || [];
+        this.departamentos = [];
+        this.provincias = [];
+        this.distritos = [];
+    }
+
+    async init() {
+        try {
+            this.departamentos = await this.getListDepartamentos();
+            this.provincias = await this.getListProvincias();
+            this.distritos = await this.getListDistritos();
+        } catch (error) {
+            console.error('Error en la inicialización de Ubigeos:', error.message);
+            throw error;
+        }
     }
 
     async getListDepartamentos() {
-        return await getDepartamentos() || [];
+        try {
+            return await getDepartamentos() || [];
+        } catch (error) {
+            console.error('Error en getListDepartamentos:', error.message);
+            throw error;
+        }
     }
 
     async getListProvincias() {
-        return await getProvincias() || [];
+        try {
+            return await getProvincias() || [];
+        } catch (error) {
+            console.error('Error en getListProvincias:', error.message);
+            throw error;
+        }
     }
 
     async getListDistritos() {
-        return await getDistritos() || [];
+        try {
+            return await getDistritos() || [];
+        } catch (error) {
+            console.error('Error en getListDistritos:', error.message);
+            throw error;
+        }
     }
 
     async findByIdDepartamento(name) {
-        const items = await this.getListDepartamentos();
-        const item = items.find((element) => element.nombre_ubigeo == name);
-        return item.id_ubigeo;
+        try {
+            const items = await this.getListDepartamentos();
+            const item = items.find((element) => element.nombre_ubigeo === name);
+            return item ? item.id_ubigeo : null;
+        } catch (error) {
+            console.error('Error en findByIdDepartamento:', error.message);
+            throw error;
+        }
     }
 
     findByIdProvinces(items, name) {
-        const item = items.find((element) => element.nombre_ubigeo == name);
-        return item.id_ubigeo;
+        const item = items.find((element) => element.nombre_ubigeo === name);
+        return item ? item.id_ubigeo : null;
     }
 
     async filterProvinceById(id) {
-        const items = await this.getListProvincias();
-        const list = items[+id];
-        return list;
+        try {
+            const items = await this.getListProvincias();
+            return items[+id] || null;
+        } catch (error) {
+            console.error('Error en filterProvinceById:', error.message);
+            throw error;
+        }
     }
 
     async filterDistrictById(id) {
-        const items = await this.getListDistritos();
-        const list = items[+id];
-        return list;
+        try {
+            const items = await this.getListDistritos();
+            return items[+id] || null;
+        } catch (error) {
+            console.error('Error en filterDistrictById:', error.message);
+            throw error;
+        }
     }
 }

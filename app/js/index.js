@@ -11,16 +11,21 @@ formNumber.onsubmit = async (e) => {
     btnSendNumber.disabled = true;
     loader.removeAttribute('hidden', '');
 
-    const resp = await sendNumber(formNumber);
+    try {
+        const resp = await sendNumber(formNumber);
 
-    if (resp.sendEmail) {
-        formNumber.elements["celularcontacto"].value = null;
+        if (resp.sendEmail) {
+            formNumber.elements["celularcontacto"].value = null;
+            alert('Se envió el correo exitosamente!');
+        }
+    } catch (error) {
+        console.error("Error al enviar el número:", error);
+        // Agrega aquí manejo de errores adicional según sea necesario.
+    } finally {
         btnSendNumber.disabled = false;
         loader.setAttribute('hidden', '');
-        alert('Se envío el correo éxitosamente!');
     }
 };
-
 
 function actionComprar() {
     const btnComprar = document.getElementById('btnComprar');
