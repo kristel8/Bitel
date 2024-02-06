@@ -4,16 +4,22 @@ export class Card extends HTMLElement {
     constructor() {
         super();
     }
-
+    //Agregue Try/Catch - Manejo de Promesas
     async connectedCallback() {
-        await this.getCards();
+        try{
+            await this.getCards();
+        }catch (error){
+            console.log("Error al obtener las tarjetas:", error);
+        }
+        
     }
 
     async getCards() {
         const plan = new Plan();
         const plans = await plan.plans;
 
-        let textHTML = '';
+        //Manejo de HTML en el bucle
+        const htmlArray=[];
 
         for (const item of plans) {
             const listSocial = this.getSocialNetworks(item.redesSociales);
@@ -27,35 +33,29 @@ export class Card extends HTMLElement {
                         <h3>${item.descripcionTitulo}</h3>
                         <span>${item.descripcionDetalleTitulo}</span>
                     </div>
-            
                     <div class="card_velocity">
                         <h3>${item.megas}</h3>
                         <span>Gigas regulares en alta velocidad</span>
                     </div>
-            
                     <section class="card__social">${listSocial}</section>
-                
                     <section class="card__promotion">${promotion}</section>
-                
                     <a id="showDetail${item.idCard}">Ver detalle</a>
-                    
                     <a id="choosePlan${item.idCard}" class="button" href="./registro.html">Lo quiero</a>
                 </section>
-        
                 <section class="face back">
                     <section>
                         <h3>${item.titulo}</h3>
                         <div class="card__detail">${listDetails}</div>
                     </section>
-            
                     <button id="closeDetail${item.idCard}" type="button" class="button-outline">Cerrar</button>
                 </section>
             </section>
             `;
 
-            textHTML = textHTML.concat(cards);
-            this.innerHTML = `${textHTML}`;
+            htmlArray.push(cards);
         }
+
+        this.innerHTML = htmlArray.join('');
 
         for (const item of plans) {
             const btnShowDetail = document.getElementById(`showDetail${item.idCard}`);
@@ -78,8 +78,8 @@ export class Card extends HTMLElement {
         let currentPosition = 0;
 
         prevBtn.addEventListener('click', () => {
-            if(carousel.clientWidth < 900) slideWidth = carousel.clientWidth / 1;
-            if(carousel.clientWidth > 900) slideWidth = carousel.clientWidth / 2;
+            if (carousel.clientWidth < 900) slideWidth = carousel.clientWidth / 1;
+            if (carousel.clientWidth > 900) slideWidth = carousel.clientWidth / 2;
 
             currentPosition += slideWidth;
             if (currentPosition > 0) {
@@ -89,8 +89,8 @@ export class Card extends HTMLElement {
         });
 
         nextBtn.addEventListener('click', () => {
-            if(carousel.clientWidth < 900) slideWidth = carousel.clientWidth / 1;
-            if(carousel.clientWidth > 900) slideWidth = carousel.clientWidth / 2;
+            if (carousel.clientWidth < 900) slideWidth = carousel.clientWidth / 1;
+            if (carousel.clientWidth > 900) slideWidth = carousel.clientWidth / 2;
 
             currentPosition -= slideWidth;
             if (currentPosition < -(carousel.scrollWidth - carousel.clientWidth)) {
@@ -135,14 +135,13 @@ export class Card extends HTMLElement {
                 </div>
             `;
 
-                textHTML = textHTML.concat(networks);
+                textHTML += networks;
             }
 
             return textHTML;
         }
 
         return textHTML;
-
     }
 
     getNetworks(list) {
@@ -150,9 +149,8 @@ export class Card extends HTMLElement {
 
         for (const item of list) {
             if (item.imagen) {
-                const networks = `
-                <img src="app/assets/img/${item.imagen}" />`;
-                textHTML = textHTML.concat(networks);
+                const networks = `<img src="app/assets/img/${item.imagen}" />`;
+                textHTML += networks;
             }
         }
 
@@ -167,16 +165,15 @@ export class Card extends HTMLElement {
                 <span>${promo.cantidadMegas}</span>
                 <span>${promo.duracion}</span>`;
 
-                textHTML = textHTML.concat(promotion);
+            textHTML += promotion;
 
             if (promo.imagenPromo) {
                 const image = `<img src="app/assets/img/${promo.imagenPromo}"/>`;
-                textHTML = textHTML.concat(image);
+                textHTML += image;
             }
             return textHTML;
         }
         return textHTML;
-
     }
 
     getDetails(list) {
@@ -190,7 +187,7 @@ export class Card extends HTMLElement {
             </div>
         `;
 
-            textHTML = textHTML.concat(details);
+            textHTML += details;
         }
 
         return textHTML;

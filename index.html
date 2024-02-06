@@ -6,11 +6,29 @@
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="pragma" content="no-cache" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KXR784PJ');</script>
+  <!-- End Google Tag Manager -->
+
     <title>Mi Plan Bitel</title>
+
+    <!-- Precarga del archivo de estilo CSS -->
+    <link rel="preload" href="app/css/style.css?version=1.0" as="style"/>
+    
     <link rel="stylesheet" href="app/css/style.css?version=1.0" />
   </head>
 
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXR784PJ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <app-header></app-header>
     <div id="btnComprar">Compra aquí</div>
     <h1 class="plan__title">Tenemos 7 planes chip</h1>
@@ -30,12 +48,12 @@
 
     <footer>
       <app-footer></app-footer>
-      <span>© Desarrollado por KRIVI</span>
+      <span>© Desarrollado por Valentino</span>
     </footer>
 
-    <script type="module" src="app/js/index.js?version=1.0"></script>
-    <script src="app/components/header.js?version=1.0"></script>
-    <script src="app/components/footer.js?version=1.0"></script>
-    <script type="module" src="app/components/card.js"></script>
+    <script async type="module" src="app/js/index.js?version=1.0"></script>
+    <script async src="app/components/header.js?version=1.0"></script>
+    <script async src="app/components/footer.js?version=1.0"></script>
+    <script defer type="module" src="app/components/card.js"></script>
   </body>
 </html>

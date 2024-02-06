@@ -9,34 +9,39 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: content-type");
 header("Access-Control-Allow-Methods: OPTIONS,GET,PUT,POST,DELETE");
 
-$cardModel = new CardModel();
-$redSocialService = new RedSocialService();
-$promocionesService = new PromocionesService();
-$detallesService = new DetallesService();
+try {
+    // Crear instancias de servicios y modelos
+    $cardModel = new CardModel();
+    $redSocialService = new RedSocialService();
+    $promocionesService = new PromocionesService();
+    $detallesService = new DetallesService();
 
-    $rpt=$cardModel->Listar();
+    // Obtener datos de las tarjetas
+    $rpt = $cardModel->Listar();
 
-    $card = Array();
+    $card = [];
 
-    while($reg=$rpt->fetch_object()){
-
-        $card[]=array(
-
-            "idCard"=>$reg->idcard,
-            "titulo"=>$reg->titulo,
-            "descripcionTitulo"=>$reg->descripciontitulo,
-            "descripcionDetalleTitulo"=>$reg->descripciondetalletitulo,
-            "megas"=>$reg->megas,
-            "descripcionMegas"=>$reg->descripcionmegas,
-            "redesSociales"=>$redSocialService->getRedesSociales($reg->idcard),
-            "promociones"=>$promocionesService->getPromociones($reg->idcard),
-            "detalles"=> $detallesService->getDetalles($reg->idcard)
-            
+    while ($reg = $rpt->fetch_object()) {
+        // Construir un array asociativo con los datos de la tarjeta
+        $card[] = array(
+            "idCard" => $reg->idcard,
+            "titulo" => $reg->titulo,
+            "descripcionTitulo" => $reg->descripciontitulo,
+            "descripcionDetalleTitulo" => $reg->descripciondetalletitulo,
+            "megas" => $reg->megas,
+            "descripcionMegas" => $reg->descripcionmegas,
+            "redesSociales" => $redSocialService->getRedesSociales($reg->idcard),
+            "promociones" => $promocionesService->getPromociones($reg->idcard),
+            "detalles" => $detallesService->getDetalles($reg->idcard)
         );
     }
 
-    $Result = $card;
+    // Devolver el resultado en formato JSON
+    $result = $card;
+    echo json_encode($result);
 
-        echo json_encode($Result);
-
+} catch (Exception $e) {
+    // Manejar cualquier excepción y devolver un mensaje de error
+    echo json_encode(array("error" => $e->getMessage()));
+}
 ?>

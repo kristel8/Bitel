@@ -32,16 +32,21 @@ class Footer extends HTMLElement {
                     <div class="footer__item">
                         <input id="phoneNumber" type="text" name="celularcontacto" placeholder="Celular" class="input" onKeyPress="if(this.value.length==9) return false" autocomplete="off">
                         <button type="submit" id="btnSendNumber" class="button">Enviar</button>
-                        <div id="loader2" class="loader" hidden></div>
+                        <div id="loader2" class="hidden"></div>
                     </div>
                 </form>
             </section>
         `;
-
+        //Agregue un manejo de Eventos
         const btnAdquirirChip = document.getElementById('btnAdquirirChip');
-        btnAdquirirChip.addEventListener("click", () => {
+        if (btnAdquirirChip) {
+            btnAdquirirChip.removeEventListener("click", handleClick);
+            btnAdquirirChip.addEventListener("click", handleClick);
+        }
+
+        function handleClick() {
             localStorage.removeItem('planSeleccionado');
-        });
+        }
     }
 }
 

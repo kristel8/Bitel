@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require_once "../utils/BodyMessage.php";
 require '../lib/PHPMailer/src/PHPMailer.php';
@@ -6,14 +6,13 @@ require '../lib/PHPMailer/src/SMTP.php';
 require '../lib/PHPMailer/src/Exception.php';
 header("Access-Control-Allow-Origin: *");
 
-function limpiarCadena($Str){
-
+function limpiarCadena($Str) {
     global $Conexion;
     $Str = rtrim(strtoupper($Str));
     return $Str;
 }
 
-$celularcontacto=isset($_REQUEST["celularcontacto"])? limpiarCadena($_REQUEST["celularcontacto"]):"";
+$celularcontacto = isset($_REQUEST["celularcontacto"]) ? limpiarCadena($_REQUEST["celularcontacto"]) : "";
 
 $bodyMessage = new BodyMessage();
 
@@ -22,7 +21,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-$mail = new PHPMailer(true); 
+$mail = new PHPMailer(true);
 
 $mail->isSMTP();
 $mail->SMTPDebug = 0; //SMTP::DEBUG_SERVER; // Activa el modo debug para obtener más información (opcional)
@@ -38,14 +37,13 @@ $mail->addAddress('redmovilgrupo@gmail.com', 'redmovilgrupo@gmail.com'); // Dire
 $mail->Subject = 'SOLICITUD DE INFORMACION SOBRE PLANES'; // Asunto del correo
 $mail->Body = $bodyMessage->getBodyMessageNumber($celularcontacto);
 
-
 try {
     $mail->send();
-    //echo "Correo enviado exitosamente!";
-    $results = array("sendEmail"=>true);
+    $results = array("sendEmail" => true);
     echo json_encode($results);
 } catch (Exception $e) {
-    echo "Error al enviar el correo: {$mail->ErrorInfo}";
+    $results = array("sendEmail" => false, "error" => $e->getMessage());
+    echo json_encode($results);
 }
 
 ?>

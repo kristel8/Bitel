@@ -20,21 +20,28 @@ const ubigeos = new Ubigeos();
 let provincias;
 
 formRegistro.onsubmit = async (e) => {
-    console.log(formRegistro.validity)
     e.preventDefault();
     const btnSend = document.getElementById('btnSend');
     const loader = document.getElementById('loader');
 
-    btnSend.disabled = true;
-    loader.removeAttribute('hidden', '');
+    try {
+        btnSend.disabled = true;
+        loader.removeAttribute('hidden', '');
 
-    const resp = await sendEmail(formRegistro);
+        const resp = await sendEmail(formRegistro);
 
-    if (resp.sendEmail) {
+        if (resp.sendEmail) {
+            btnSend.disabled = false;
+            loader.setAttribute('hidden', '');
+            window.location.href = "/";
+            // Considere usar elementos del DOM o notificaciones en lugar de alert.
+            alert('Los datos fueron enviados exitosamente.');
+        }
+    } catch (error) {
+        console.error("Error al enviar el correo:", error);
+        // Puedes manejar el error según tus necesidades.
         btnSend.disabled = false;
         loader.setAttribute('hidden', '');
-        window.location.href = "/";
-        alert('Los datos fueron enviados exitosamente.');
     }
 };
 
