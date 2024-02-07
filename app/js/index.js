@@ -38,3 +38,13 @@ function actionComprar() {
 
 actionComprar();
 validateForm(formNumber);
+
+
+// WHATSAPP MODAL FUNCITONALITY
+
+const whatsappModal = document.querySelector('.whatsapp-modal');
+const whatsappBtnOpen = document.querySelector('.whatsapp__btnOpen');
+const whatsappBtnClose = document.querySelector('.whatsapp-modal__btnClose');
+
+whatsappBtnOpen.addEventListener("click", () => whatsappModal.classList.add('whatsapp-modal--show'));
+whatsappBtnClose.addEventListener("click", () => whatsappModal.classList.remove('whatsapp-modal--show'));
